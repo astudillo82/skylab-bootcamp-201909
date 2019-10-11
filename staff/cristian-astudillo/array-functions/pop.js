@@ -9,7 +9,7 @@ function pop(array) {
     var lastElement = array[array.length-1]; 
     array.length = array.length-1;
     return lastElement;
-    //console.log(numbers);
+   
 }
 
 

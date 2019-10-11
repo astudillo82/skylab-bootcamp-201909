@@ -1,6 +1,7 @@
 /**
  * 
- * @param {array} array 
+ * @param {Array} array The array to iterate
+ * @param {Function} expression to evaluate in each item of the array.
  */
 
 

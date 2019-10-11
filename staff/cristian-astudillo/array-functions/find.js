@@ -1,7 +1,11 @@
-var numbers = [4,52,12,5,8];
+/**
+ * 
+ * @param {Array} array Required. The value of the current element.
+ * @param {Expression} expression The array that find was called on.
+ */
 
-function find(array, expression){
-    debugger
+
+function find(array, expression){   
     for (let i = 0; i < array.length; i++) {
         if(expression(array[i]) ){
             return array[i];
@@ -9,9 +13,7 @@ function find(array, expression){
     };
 };
 
-
 function index(element){
     return element > 12 
 }
 
-console.log(find(numbers,index))
