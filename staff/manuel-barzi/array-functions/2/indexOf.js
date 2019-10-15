@@ -1,6 +1,6 @@
 var letters = ['a','b','c','d','e']
 
-function indexOf(array, element) {debugger
+function indexOf(array, element) {
     for (let i = 0; i < array.length; i++) {
         if(array[i]=== element)
         return array[i]        
