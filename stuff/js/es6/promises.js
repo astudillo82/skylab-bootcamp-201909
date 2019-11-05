@@ -1,6 +1,6 @@
 // DEMO synchronous operations
 
-new Promise((resolve, reject) => {
+new Promise((resolve, reject) => {debugger
 	resolve(10)
 })
 	.then(res => res * 10)
