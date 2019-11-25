@@ -1,0 +1,191 @@
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.register {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://wallpaperplay.com/walls/full/e/0/a/146146.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.register__text {
+  height: 90%;
+  padding: 7%;
+}
+.register__title {
+  text-align: center;
+}
+.register__subtitle {
+  text-align: center;
+}
+.register__field {
+  text-align: center;
+}
+.register__buttons {
+  height: 10%;
+}
+
+.login {
+  display: grid;
+  background-color: red;
+  height: 100vh;
+  text-align: center;
+  background-image: url("https://desktopwallpaper.live/wp-content/uploads/2019/06/purple-heavy-metal-wallpapers-15-1024x768.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.login__text {
+  margin-top: 10vh;
+}
+.login__field {
+  display: grid;
+  margin: 0rem 3rem;
+  grid-gap: 1rem;
+  height: 5em;
+}
+.login__buttons {
+  display: grid;
+  margin: 1em 3em;
+  height: 5em;
+  grid-gap: 1em;
+}
+
+.news {
+  border-style: inset;
+  text-align: center;
+  height: 100vh;
+  background-image: url("https://desktopwallpaper.live/wp-content/uploads/2019/06/purple-heavy-metal-wallpapers-31.jpg");
+  background-color: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.news__subtitle {
+  color: white;
+  font-size: 1.5em;
+}
+.news .news__photo {
+  width: 15em;
+  right: 1em;
+}
+
+.review {
+  border-style: inset;
+  text-align: center;
+  background-image: url("https://desktopwallpaper.live/wp-content/uploads/2019/06/purple-heavy-metal-wallpapers-31.jpg");
+  background-color: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.review .review__container {
+  border: 2px solid red;
+}
+.review__subtitle {
+  color: white;
+  font-size: 1.5em;
+}
+.review .review__photo {
+  width: 10em;
+}
+.review .review__text {
+  text-align: left;
+  margin: 1em;
+  color: white;
+}
+
+.header__title {
+  text-align: left;
+  margin: 1em;
+  position: relative;
+  top: 7em;
+}
+.header__logout {
+  display: grid;
+  position: relative;
+  top: 6em;
+  left: 17em;
+}
+.header__submit {
+  display: grid;
+  width: 22em;
+  height: 2em;
+  position: relative;
+  top: 7em;
+  left: 2em;
+}
+
+.footer {
+  bottom: 10em;
+}
+.footer__go-up {
+  left: 20em;
+  top: 2em;
+  color: black;
+}
+.footer__social-media {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.landing {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images4.alphacoders.com/232/thumb-1920-232484.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.landing__text {
+  height: 90%;
+  padding: 40% 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.landing__quote {
+  font-size: 1em;
+}
+.landing__title {
+  font-size: 2em;
+}
+.landing__footer {
+  height: 10%;
+  padding: 7%;
+}
+
+.menu__list {
+  margin-left: 0;
+}
+.menu__click {
+  margin-top: 5%;
+  list-style: none;
+}
+
+.landing {
+  display: none;
+}
+
+.login {
+  display: none;
+}
+
+.news {
+  display: none;
+}
+
+.review {
+  display: none;
+}
+
+/*# sourceMappingURL=index.css.map */
