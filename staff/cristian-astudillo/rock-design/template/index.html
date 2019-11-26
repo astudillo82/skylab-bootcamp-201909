@@ -19,13 +19,13 @@
             <nav class="menu">
                 <p class="landing__subtitle">Are you ready to headbanging?</p>
                 <ul class="menu__list">
-                    <li class="menu__click"><a href=#"Register">Register</a></li>
-                    <li class="menu__click"><a href=#"Login">Login</a></li>
+                    <li class="menu__click"><a href=#>Register</a></li>
+                    <li class="menu__click"><a href=#>Login</a></li>
                 </ul>
             </nav>
         </main>
         <footer class="landing__footer">
-            <p class="menu__signin">Already have an account? <a href=#"SignIn">Sign in</a></p>
+            <p class="menu__signin">Already have an account? <a href=#>Sign in</a></p>
         </footer>
     </section>
 
@@ -34,114 +34,123 @@
         <main class="register__text">
             <h1 class="register__title">Register</h1>
             <p class="register__subtitle">Please fill the fields to create a new account</p>    
-            <section class="register__field">
-                <input type="text" placeholder="Enter your name">
-                <input type="text" placeholder="Enter your surname">
-                <input type="text" placeholder="Enter your username">
-                <input type="e-mail" placeholder="Enter your e-mail">
-                <input type="e-mail" placeholder="Confirm your e-mail">
-                <input type="password" placeholder="Enter your password">
-                <input type="password" placeholder="Confirm your password">
-            </section>
+            <form class="register__form">  
+                <input class = "register__field" type="text" placeholder="Name">
+                <input class = "register__field" type="text" placeholder="Surname">
+                <input class = "register__field" type="text" placeholder="Username">
+                <input class = "register__field" type="e-mail" placeholder="E-mail">
+                <input class = "register__field" type="e-mail" placeholder="Confirm e-mail">
+                <input class = "register__field" type="password" placeholder="Password">
+                <input class = "register__field" type="password" placeholder="Confirm password">
+                <input class = "register__submit" type="Submit" value="Register"> 
+            </form>
 
-            <section class="register__buttons">
-                <input class="register__submit" type="Submit" value="Register">
-                <input class="register__reset" type="reset" value="Go Back">
-            </section>
+            <a class="register__reset" href="#">Go Back</a>                
+            
         </main>
     </section>
 
 
     <section class="login">
-        <section class="login__text">
+        <main class="login__text">
             <h1 class="login__title">Login</h1>
-            <p>Please fill the fields to login</p>
-        </section>
-        <form>
-            <section class="login__field">
-                <input class="login__field--username" type="text" placeholder="Enter your username">
-                <input class="login__field--password" type="password" placeholder="Enter your password">
-            </section>
-
-            <section class="login__buttons">
-                <input class="login__submit" type="Submit" value="Login">
-                <input class="login__submit" type="Submit" value="Go Back">
-            </section>
+            <p class="login__subtitle">Please fill the fields to login</p>        
+        <form class="login__form">            
+            <input class="login__field" type="text" placeholder="Username">
+            <input class="login__field" type="password" placeholder="Password">
+            <input class="login__submit" type="Submit" value="Login">                
         </form>
+
+        <a class="login__reset" href="#">Go Back</a>
+               
+        </main>      
     </section>
 
     <section class="news">
+        
         <header class="header">
-            <h3 class="header__title">Rock-Blog</h3>
-            <p class="header__logout"> <a href=#"LogOut">LogOut</a></p>
-            <input class="header__submit" type="text" name="search" placeholder="search..">
+            <main class="header__main">
+                <div class="header__news">
+                    <h3 class="header__title">Rock-Blog</h3>
+                    <a class="header__logout" href="#">Log Out</a>
+                </div>
+                    <input class="header__search" type="text" placeholder="search...">               
+            </main>
         </header>
-        <main>
-            <article>
-                <p class="news__subtitle">NEWS</p>
-                <img class="news__photo"
+
+        <main class="main">
+            <article class="main__article">
+                <p class="main__subtitle">NEWS</p>
+                <img class="main__photo"
                     src="https://rockfm-cdnmed.agilecontent.com/resources/jpg/5/3/1567506691435.jpg">
-                <p class="news__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem mollitia ad
-                    exercitationem suscipit architecto commodi iure reprehenderit placeat asperiores praesentium.</p>
+                <p class="main__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem mollitia ad
+                    exercitationem suscipit architecto commodi iure reprehenderit placeat asperiores praesentium Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis voluptas? Unde ea earum adipisci possimus dolor alias corporis. Magnam.</p>
             </article>
         </main>
 
         <footer class="footer">
             <button class="footer__go-up">Go up!!</button>
-
             <p class="footer__share">SHARE THIS:</p>
 
             <div class="footer__social-media">
-                <img src="images/facebook.png" alt="facebook" /></img>
-                <img src="images/instagram.png" alt="instagram"></img>
-                <img src="images/twitter.png" alt="twitter"></img>
-                <img src="images/youtube.png" alt="youtube"></img>
+                <img class = "footer__icon" src = "images/facebook.png" alt="facebook" /></img>
+                <img class = "footer__icon" src = "images/instagram.png" alt="instagram"></img>
+                <img class = "footer__icon" src = "images/twitter.png" alt="twitter"></img>
+                <img class = "footer__icon" src = "images/youtube.png" alt="youtube"></img>
             </div>
+
             <p class="footer__copyright"> © Copyright 2019, Rock-Blog Productions, Inc.</p>
+
         </footer>
     </section>
 
     <section class="review">
-        <header class="header">
-            <h3 class="header__title">Rock-Blog</h3>
-            <p class="header__logout"> <a href=#"LogOut">LogOut</a></p>
-            <input class="header__submit" type="text" name="search" placeholder="search..">
-        </header>
-        <main>
-            <section class="review__container">
-                <div>
-                    <p class="review__subtitle">REVIEW</p>
-                    <img class="review__photo"
-                        src="https://images-na.ssl-images-amazon.com/images/I/51H5yMD1IqL._SY355_.jpg">
-                </div>
 
-                <div class="rating">
-                    <img src="images/hand-1.png" alt="rating">
-                    <img src="images/hand-1.png" alt="rating">
-                    <img src="images/hand-1.png" alt="rating">
-                    <img src="images/hand-1.png" alt="rating">
-                    <img src="images/hand-1.png" alt="rating">
-                </div>
-            </section>
-
-            <section class="review__setlist">
-                <aside class="setlist">
-                    <p class="setlist__title">SetList</p><br>
-                    <div>
-                        <p>lorem</p>
-                        <p>lorem</p>
-                        <p>lorem</p>
-                        <p>lorem</p>
-                        <p>lorem</p>
-                    </div>
-                </aside>
-            </section>
-
-            <section class="review__text">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem mollitia ad exercitationem suscipit
-                    architecto commodregisterre reprehenderit placeat asperiores praesentium.</p>
-            </section>
+    <header class="header">
+        <main class="header__main">
+            <div class="header__news">
+                <h3 class="header__title">Rock-Blog</h3>
+                <a class="header__logout" href="#">Log Out</a>
+            </div>
+                <input class="header__search" type="text" placeholder="search...">               
         </main>
+    </header>
+
+    <main class="main">
+        <article class="main__article">
+            <p class="main__subtitle-review">REVIEW</p>
+
+                <section class="main__release">
+
+                    <div class = "main__container">                  
+                        <p class="main__album">BLACK SABBATH</p>
+                        <img class="main__photo"
+                            src="https://images-na.ssl-images-amazon.com/images/I/51H5yMD1IqL._SY355_.jpg">  
+                    
+                        <div class="main__rating">
+                            <img class = "main__hand" src="images/hand-1.png" alt="rating">
+                            <img class = "main__hand" src="images/hand-1.png" alt="rating">
+                            <img class = "main__hand" src="images/hand-1.png" alt="rating">
+                            <img class = "main__hand" src="images/hand-1.png" alt="rating">
+                            <img class = "main__hand" src="images/hand-1.png" alt="rating">
+                        </div>
+                    </div>                     
+                        
+                    <div class="main__setlist">
+                        <p class="main__title">SetList</p><br>
+                        <p  class = "main__songs">lorem-ipsum</p>
+                        <p  class = "main__songs">lorem-ipsum</p>
+                        <p  class = "main__songs">lorem-ipsum</p>
+                        <p  class = "main__songs">lorem-ipsum</p>
+                        <p  class = "main__songs">lorem-ipsum</p>
+                    </div>  
+                             
+            </section>            
+
+            <p class="main__text--review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem mollitia ad exercitationem suscipit
+                architecto commodregisterre reprehenderit placeat asperiores praesentium.</p>          
+        </article>
+    </main>
 
         <footer class="footer">
             <button class="footer__go-up">Go up!!</button>
@@ -156,6 +165,23 @@
             </div>
             <p class="footer__copyright"> © Copyright 2019, Rock-Blog Productions, Inc.</p>
         </footer>
+    </section>
+
+
+    <section class="reply">
+        <main class="reply__text">
+            <h1 class="reply__title">LEAVE A REPLY</h1>            
+            <form class="reply__form">  
+                <input class = "reply__comment" type="text" placeholder="Your Reply">             
+                <input class = "reply__field" type="text" placeholder="Name">
+                <input class = "reply__field" type="e-mail" placeholder="E-mail">               
+                
+                <input class = "reply__submit" type="Submit" value="Reply"> 
+            </form>
+
+            <a class="reply__reset" href="#">Go Back</a>                
+            
+        </main>
     </section>
 </body>
 

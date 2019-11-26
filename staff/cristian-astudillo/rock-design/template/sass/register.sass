@@ -6,8 +6,12 @@
     height: 100vh     
 
     &__text
-        height: 90%
+        height: 100%
         padding: 7%
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        align-items: center
 
     &__title
         text-align: center 
@@ -15,11 +19,22 @@
     &__subtitle
         text-align: center          
     
-    &__field
-        text-align: center
+    &__form
+        width: 90%
+        display: flex
+        flex-direction: column
+        justify-content: center
 
-    &__buttons
-        height: 10%
+    &__field
+        margin-top: 5%
+        padding: 3%
+        border-radius: 15px
+    
+    &__submit
+        margin-top: 5%
+        padding: 3%
+        color: black
+
 
      
    

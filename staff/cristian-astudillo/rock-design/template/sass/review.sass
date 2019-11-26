@@ -1,28 +1,45 @@
-.review
-    border-style: inset
-    text-align: center
+.review  
     background-image: url("https://desktopwallpaper.live/wp-content/uploads/2019/06/purple-heavy-metal-wallpapers-31.jpg")
     background-color: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6))
     background-repeat: no-repeat
     background-size: cover
     background-position: center   
-    height: 100vh  
+    height: 100vh 
 
-    .review__container
-        border: 2px solid red
+.main
+    &__article
+        height: 100%
+        padding: 0% 7%   
 
-    &__subtitle
-        color: white
-        font-size: 1.5em  
-
-    .review__photo
-        width: 10em        
-            
-    .review__text
-        text-align: left
-        margin: 1em
-        color: white
+    &__album, &__title, &__songs, &__subtitle-review
+        color: black
+        font-size: 20px
         
+    &__subtitle-review
+        margin-right: 83%
+
+    &__photo
+        width: 60%
+    
+    &__release       
+        display: grid
+        grid-template-columns: 1fr 1fr
+        margin-top:10%
+        text-align: center
+
+    &__text--review
+        margin: 17% 0%
+        padding: 4%
+        background: rgba(0, 0, 0, 0.5)
+        text-align: center
+
+ 
+ 
+
+
+
+
+         
 
     
     

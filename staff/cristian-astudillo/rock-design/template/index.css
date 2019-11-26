@@ -11,8 +11,12 @@
   height: 100vh;
 }
 .register__text {
-  height: 90%;
+  height: 100%;
   padding: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .register__title {
   text-align: center;
@@ -20,44 +24,62 @@
 .register__subtitle {
   text-align: center;
 }
-.register__field {
-  text-align: center;
+.register__form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.register__buttons {
-  height: 10%;
+.register__field {
+  margin-top: 5%;
+  padding: 3%;
+  border-radius: 15px;
+}
+.register__submit {
+  margin-top: 5%;
+  padding: 3%;
+  color: black;
 }
 
 .login {
-  display: grid;
-  background-color: red;
-  height: 100vh;
-  text-align: center;
   background-image: url("https://desktopwallpaper.live/wp-content/uploads/2019/06/purple-heavy-metal-wallpapers-15-1024x768.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: white;
+  height: 100vh;
 }
 .login__text {
-  margin-top: 10vh;
+  height: 100%;
+  padding: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.login__title {
+  text-align: center;
+}
+.login__subtitle {
+  text-align: center;
+}
+.login__form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .login__field {
-  display: grid;
-  margin: 0rem 3rem;
-  grid-gap: 1rem;
-  height: 5em;
+  margin-top: 5%;
+  padding: 3%;
+  border-radius: 15px;
 }
-.login__buttons {
-  display: grid;
-  margin: 1em 3em;
-  height: 5em;
-  grid-gap: 1em;
+.login__submit {
+  margin-top: 5%;
+  padding: 3%;
+  color: black;
 }
 
 .news {
-  border-style: inset;
-  text-align: center;
-  height: 100vh;
   background-image: url("https://desktopwallpaper.live/wp-content/uploads/2019/06/purple-heavy-metal-wallpapers-31.jpg");
   background-color: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   background-repeat: no-repeat;
@@ -65,18 +87,30 @@
   background-position: center;
   height: 100vh;
 }
-.news__subtitle {
-  color: white;
-  font-size: 1.5em;
+
+.main__article {
+  height: 100%;
+  padding: 7%;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.news .news__photo {
-  width: 15em;
-  right: 1em;
+.main__subtitle {
+  margin: 0%;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+  font-size: 25px;
+  margin-right: 80%;
+  color: black;
+}
+.main__text {
+  margin: 22% 0%;
+  padding: 4%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .review {
-  border-style: inset;
-  text-align: center;
   background-image: url("https://desktopwallpaper.live/wp-content/uploads/2019/06/purple-heavy-metal-wallpapers-31.jpg");
   background-color: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   background-repeat: no-repeat;
@@ -84,54 +118,75 @@
   background-position: center;
   height: 100vh;
 }
-.review .review__container {
-  border: 2px solid red;
+
+.main__article {
+  height: 100%;
+  padding: 0% 7%;
 }
-.review__subtitle {
-  color: white;
-  font-size: 1.5em;
+.main__album, .main__title, .main__songs, .main__subtitle-review {
+  color: black;
+  font-size: 20px;
 }
-.review .review__photo {
-  width: 10em;
+.main__subtitle-review {
+  margin-right: 83%;
 }
-.review .review__text {
-  text-align: left;
-  margin: 1em;
-  color: white;
+.main__photo {
+  width: 60%;
+}
+.main__release {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10%;
+  text-align: center;
+}
+.main__text--review {
+  margin: 17% 0%;
+  padding: 4%;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
-.header__title {
-  text-align: left;
-  margin: 1em;
-  position: relative;
-  top: 7em;
+.header__main {
+  height: 100%;
+  padding: 3% 7%;
+  padding-bottom: 0%;
+  display: flex;
+  flex-direction: column;
+}
+.header__news {
+  display: flex;
+  justify-content: space-between;
 }
 .header__logout {
-  display: grid;
-  position: relative;
-  top: 6em;
-  left: 17em;
+  margin-right: 5%;
 }
-.header__submit {
-  display: grid;
-  width: 22em;
-  height: 2em;
-  position: relative;
-  top: 7em;
-  left: 2em;
+.header__search {
+  margin: 5%;
+  padding: 3%;
+  border-radius: 15px;
 }
 
 .footer {
-  bottom: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0% 7%;
 }
 .footer__go-up {
-  left: 20em;
-  top: 2em;
+  margin-left: 80%;
+  width: 20%;
   color: black;
+}
+.footer__share {
+  margin-left: 5%;
 }
 .footer__social-media {
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
+}
+.footer__copyright {
+  margin-top: 5%;
 }
 
 * {
@@ -165,27 +220,53 @@
 }
 
 .menu__list {
-  margin-left: 0;
+  margin-left: 40%;
+  font-size: x-large;
 }
 .menu__click {
   margin-top: 5%;
   list-style: none;
 }
 
-.landing {
-  display: none;
+.reply {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://wallpaperplay.com/walls/full/e/0/a/146146.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
-
-.login {
-  display: none;
+.reply__text {
+  height: 100%;
+  padding: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
-
-.news {
-  display: none;
+.reply__title {
+  text-align: center;
 }
-
-.review {
-  display: none;
+.reply__subtitle {
+  text-align: center;
+}
+.reply__form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.reply__comment {
+  padding: 3% 0% 72% 3%;
+}
+.reply__field {
+  margin-top: 5%;
+  padding: 3%;
+  border-radius: 15px;
+}
+.reply__submit {
+  margin-top: 5%;
+  padding: 3%;
+  color: black;
 }
 
 /*# sourceMappingURL=index.css.map */
