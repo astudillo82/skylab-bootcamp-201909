@@ -1,5 +1,5 @@
 const { Schema } = require('mongoose')
-// const { validators : { isEmail } ???} = require('taks - util')
+const { validators : { isEmail }} = require('tasks - util')
 const Post = require('./post')
 
 module.exports = new Schema({
@@ -19,11 +19,17 @@ module.exports = new Schema({
             unique: true
         },
 
+        email: {
+            type: String,
+            required: true,
+            match: isEmail
+        },
+
         password: {
             type: String,
             required: true,            
         },
-        post : [Post]
+        posts : [Post]
     })
 
 
