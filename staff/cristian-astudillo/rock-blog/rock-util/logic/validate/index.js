@@ -1,10 +1,14 @@
-validate = {
+// VALIDATE/INDEX.JS: NOS SIRVE PARA TRABAJAR EN NUESTRA LÓGICA PARA VALIDAR DATOS PRIMITIVOS, OBJECT Y FUNCTION, SI SON CORRECTOS O NO SEGÚN LOS DATOS QUE ESTÉ INGRESANDO LOS USUARIOS.  
+
+
+
+const validate = {    
 
     string: function (target) {
         if(typeof(target) !== 'string') throw new Error (`${target} is not a string`)
     }, 
 
-    number: function (target) {debugger
+    number: function (target) {
         if(typeof(target) !=='number') throw new Error (`${target} is not a number`)
     },    
 
@@ -35,3 +39,4 @@ validate = {
 }
 
 module.exports = validate
+

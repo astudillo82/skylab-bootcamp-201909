@@ -1,24 +1,39 @@
-const { validate, errors: { ConflictError } } = require('rock-util')
-const { models: { User } } = require('rock-data')
+const { models: { User }} = require('rock-data')
+const { validate } = require('rock-util')
 
-module.exports = function (name, surname, email, username, password) {
+/**
+ * Register User
+ * 
+ * @param {String} name 
+ * @param {String} surname 
+ * @param {String} email 
+ * @param {String} username 
+ * @param {String} password 
+ * 
+ * @throws {Error} to validate name data
+ * @throws {Error} to validate surname data
+ * @throws {Error} to validate email data
+ * @throws {Error} to validate username data
+ * @throws {Error} to validate password data
+ * 
+ * @return {Object} UserCreate
+ * 
+ * @example 
+ *  
+ *       logic.registerUser('pepe', 'grillo', 'pepe@grillo.com' ,'pepito', 'jghdfs765')  
+ * 
+ */
+const registerUser = (name, surname, email, username, password) => {
     validate.string(name)
-    validate.string.notVoid('name', name)
     validate.string(surname)
-    validate.string.notVoid('surname', surname)
-    validate.string(email)
-    validate.string.notVoid('e-mail', email)
     validate.email(email)
     validate.string(username)
-    validate.string.notVoid('username', username)
-    validate.string(password)
-    validate.string.notVoid('password', password)
-
-    return (async () => {
-        const user = await User.findOne({ username })
-
-        if (user) throw new ConflictError(`user with username ${username} already exists`)
-
-        await User.create({ name, surname, email, username, password })
+    validate.string(password)      
+         
+    return (async () => {        
+        await User.create({ name, surname, email, username, password })    
     })()
 }
+
+module.exports = registerUser
+
