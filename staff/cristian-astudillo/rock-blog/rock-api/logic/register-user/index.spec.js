@@ -19,11 +19,11 @@ describe('Logic- Register User', () => {
         password = `pasword-${Math.random()}`
     })
 
-    it ('Should to register the correct credentiasl', async() => {
+    it ('Should to register the correct credentials', async() => {
         const response = await logic.registerUser(name, surname, username, email, password)
         expect(response).to.be.undefined
 
-        const user = await User.findOne({ email, username }).lean()
+        const user = await User.findOne({ name, surname }).lean()
         expect(user).to.exist
         expect(user.name).to.equal(name)
         expect(user.surname).to.equal(surname)

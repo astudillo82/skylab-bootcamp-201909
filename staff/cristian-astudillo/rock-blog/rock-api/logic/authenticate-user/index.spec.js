@@ -25,15 +25,16 @@ describe('Logic - Authenticate User' , () =>{
 
     })
 
-    it('Should to authenticace user if they are incorrect data', () => {
+    it('Should to authenticate user if they are incorrect data', () => {
         expect(()=> logic.authenticateUser(1,password)).to.throw(Error, '1 is not a string')
         expect(()=> logic.authenticateUser(username,1)).to.throw(Error, '1 is not a string')
     })
 
-    // it('Should to authenticate user on correct credentials', async() => {debugger
-    //     const userId = await logic.authenticateUser(username, password)
-    //     expect(userId).to.equal(id)
-    // })
+    it('Should to authenticate user on correct credentials', async () => {debugger
+        const userId = await logic.authenticateUser(username, password)
+        expect(userId).to.equal(id)
+    })    
+    
 
     it('Should to authenticate user if it is incorrect username', () => {
         username = "John Doe"

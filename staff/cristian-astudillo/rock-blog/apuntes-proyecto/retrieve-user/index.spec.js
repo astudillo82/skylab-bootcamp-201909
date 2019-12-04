@@ -19,8 +19,7 @@ const { database, models: { User } } = require('rock-data')//Modelo "USER"
     let id, name, surname, username, email, password    
 
     //beforeEach() : La función dentro de beforeEach se va a ejecutar ANTES de cada test dentro del describe. 
-     beforeEach(async () => {
-        
+     beforeEach(async () => {       
         name = `name - ${Math.random()}`
         surname = `surname - ${Math.random()}`
         username = `username - ${Math.random()}`
@@ -39,7 +38,8 @@ const { database, models: { User } } = require('rock-data')//Modelo "USER"
         const user =  await logic.retrieveUser(id)
 
         expect(user).to.exist
-        expect(user.id).to.equal(id)   
+        expect(user.id).to.equal(id)  
+
         expect(user.name).to.equal(name)
         expect(user.name).to.be.a('string')
         expect(user.surname).to.equal(surname)
@@ -60,10 +60,8 @@ const { database, models: { User } } = require('rock-data')//Modelo "USER"
         } catch (error) {
             expect(error.message).to.equal(`User with id ${id} does not exist`)
         }
-    })   
-
-
-
+    })
+    
     // Una vez que nos pase el test, deleteMany nos permite limpiar el usuario creado (User.create) y luego (then()) nos desconecta, sino seguirá ejecutándose o "runeando"
     after(() => User.deleteMany().then(database.disconnect))
  })

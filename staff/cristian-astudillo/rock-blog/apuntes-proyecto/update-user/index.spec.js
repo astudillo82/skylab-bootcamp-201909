@@ -6,13 +6,19 @@ const { expect } = require('chai')//Para poder ejecutar el test
 const  logic  = require('../')//Ruta del index.js
 const { database, models: { User } } = require('rock-data')//Modelo "USER"
 
-
+//Agrupa los "IT", se utiliza para agrupar los tests o suite de tests.
+//Permite crear nuestro mundo
 describe('Logic - Update User', () => {
 
+//before() : La función dentro de before se va a ejecutar ANTES del primer test dentro del describe.
+//Conecta a la Base de Datos
 before (() => database.connect(TEST_DB_URL))
 
+//Declaramos las variables
 let id, update, name, surname, email, username, password
 
+
+    //beforeEach() : La función dentro de beforeEach se va a ejecutar ANTES de cada test dentro del describe.  
     beforeEach(async () => {
         await User.deleteMany()
 
@@ -28,19 +34,19 @@ let id, update, name, surname, email, username, password
 
         await User.create({ name, surname, email, username, password })  
 
-        const user = await User.findOne({email})       
+        const user = await User.findOne({email})  //email, surname, ...???     
 
         id = user._id.toString()
         
     })
 
-    it('Should to update user if they are incorrect update', () => {
+    it('Should to update user if they are incorrect dates', () => {
         expect(() => logic.updateUser(1, update)).to.throw(Error,'1 is not a string')
         expect(() => logic.updateUser(id, 1)).to.throw(Error,'1 is not an object')              
     })
 
 
-
+    //????
     it('Should to update user on correct credentials', async () => {
         //llamamos a la lógica que nos actualiza el usuario
         await logic.updateUser(id, update)        

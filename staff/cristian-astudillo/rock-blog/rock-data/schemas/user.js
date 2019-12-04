@@ -3,9 +3,6 @@
 // Está requiriendo la librería "Mongoose", con el constructor "Schema"
 const { Schema } = require('mongoose')
 
-// Está requiriendo schemas/post.js
-const Post = require('./post')
-
 //NOS BASAMOS EN EL "MODEL DATA" PARA PODER CONSTRUR UN ESQUEMA DE USUARIO PARA NUESTRO PROYECTO(NAME, SURNAME, USERNAME, EMAIL, PASSWORD)
 module.exports = new Schema({ 
         name: {
@@ -34,8 +31,11 @@ module.exports = new Schema({
             type: String,
             required: [true, 'please, complete the field'] ,           
         },
-        //USAMOS UN "EMBED"(INCRUSTAR) LOS POST PARA PODER VINCULAR Y PODER RELACIONARLOS CON EL USUARIO EN CUESTIÓN.
-        posts : [Post]
+        
+        posts : {
+            type: [ObjectId],
+            ref: post
+        }
     })
 
 

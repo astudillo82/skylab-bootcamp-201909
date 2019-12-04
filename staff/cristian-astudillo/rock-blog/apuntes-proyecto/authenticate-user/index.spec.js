@@ -1,6 +1,6 @@
 // ROCK-API/LOGIC/AUTHENTICATE-USER/INDEX.SPEC.JS :  REALIZA EL TESTING PARA EVITAR ERRORES UNA VEZ EJECUTADO EL PROYECTO.
 
-require('dotenv').config()//Para guardar secretos
+require('dotenv').config()//Para guardar secretos(passwords, etc..)
 const { env: { TEST_DB_URL } } = process// conectar/desconectar la base de datos
 const { expect } = require('chai')//Para poder ejecutar el test
 const logic = require('../index')//Ruta del index.js
@@ -18,10 +18,10 @@ describe('Logic - Authenticate User', () => {
     //Se Declaran las variables 
     let name, surname, email, username, password, id
 
-    //beforeEach() : La función dentro de beforeEach se va a ejecutar ANTES de cada test dentro del describe. 
+    //beforeEach() : La función dentro de beforeEach se va a ejecutar ANTES de cada test dentro del describe.    
     beforeEach(async () => {
 
-        // Se usa deleteMany() para limpiar las coincidencias
+        // Se usa deleteMany() para limpiar las coincidencias(arriba o abajo??)
         await User.deleteMany()
         
         //Math.random()???
@@ -37,10 +37,11 @@ describe('Logic - Authenticate User', () => {
             //Luego, se guarda en una constante "user"
             //findOne(): ????
             //lean(): método de mongoose que convierte  de mongoObject a Object
-            const user = await User.findOne({email}).lean()//email, name, surname,.... ??????
+            //en el findOne()puede ser cualquier variable(name, surname, etc...), pero se busca por 'email' ya que un usuario puede tener un mismo nombre, pero no un mismo email 
+            const user = await User.findOne({email}).lean()
 
             //_id : Se usa toString() ya que cuando se crea un esquema en mongo, por defecto genera un _id en un objecto, por lo tanto, lo convierte en un string
-            id = user._id.toString()//????????
+            id = user._id.toString()
     })
 
     // it : son las casos a testear.
@@ -49,11 +50,9 @@ describe('Logic - Authenticate User', () => {
         expect(() => logic.authenticateUser(username, 1)).to.throw(Error,'1 is not a string')    
     })
 
-
-    // ????????
     it('Should to authenticate user on correct credentials', async () => {
         const userId = await logic.authenticateUser(username, password)
-        expect(userId).to.equal(id)// id?????
+        expect(userId).to.equal(id)
     })
 
     it('Should to authenticate user if it is incorrect username', async () => {

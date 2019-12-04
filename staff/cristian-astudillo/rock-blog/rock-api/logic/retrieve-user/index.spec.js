@@ -29,6 +29,7 @@ describe('Logic - Retrieve User', () => {
         
         expect(user).to.exist
         expect(user.id).to.equal(id)
+        
         expect(user.name).to.equal(name)
         expect(user.name).to.be.a('string')
         expect(user.surname).to.equal(surname)

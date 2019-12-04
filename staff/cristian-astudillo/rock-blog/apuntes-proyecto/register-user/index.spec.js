@@ -7,7 +7,7 @@ const logic = require('../')//Ruta del index.js
 const { database, models: { User } } = require('rock-data')//Modelo "USER"
 
 //Agrupa los "IT", se utiliza para agrupar los tests o suite de tests.
-//Permite crear nuestro mundo
+//Permite crear nuestro mundo 
 describe('Logic - Register User', () => {
 
     //La función dentro de before se va a ejecutar antes del primer test dentro del describe
@@ -17,8 +17,7 @@ describe('Logic - Register User', () => {
     let name, surname, email, username, password
 
     //la función dentro de beforeEach se va a ejecutar antes de cada test dentro del describe
-    beforeEach(() => {
-        //Math.random()???
+    beforeEach(() => {        
         name = `name-${Math.random()}`        
         surname = `surname-${Math.random()}`
         email = `email-${Math.random()}@email.com`
@@ -32,7 +31,7 @@ describe('Logic - Register User', () => {
         const noResponse = await logic.registerUser(name, surname, email, username, password)        
         expect(noResponse).to.be.undefined
 
-        const user = await User.findOne({ email, username }).lean()/*email,password ????????? */
+        const user = await User.findOne({ email, username }).lean()
 
         expect(user).to.exist
         expect(user.name).to.equal(name)
@@ -55,5 +54,4 @@ describe('Logic - Register User', () => {
     //La función dentro de after se va a ejecutar después del último test dentro del describe
     //DeleteMany() limpia el usuario creado (User.create) y luego el then() nos desconecta de la base de datos.
     after(() => User.deleteMany().then(database.disconnect))
-
 })

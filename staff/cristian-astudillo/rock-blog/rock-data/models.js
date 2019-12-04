@@ -4,10 +4,11 @@
 const { model } = require('mongoose')
 
 //Está requiriendo el index de los esquemas
-const { user, post } = require('./schemas')
+const { user, post, comment } = require('./schemas')
 
-//LUEGO EXPORTA LOS MODELOS "USER" Y "POST"
+//LUEGO EXPORTA LOS MODELOS "USER", "POST", "COMMENT"
 module.exports = {
     User: model('User', user),
-    Post: model('Post', post)
+    Post: model('Post', post), 
+    Comment: model('Comment', comment)
 }
