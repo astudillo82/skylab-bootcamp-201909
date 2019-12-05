@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose')
+const { Schema, ObjectId } = require('mongoose')
 
 module.exports = new Schema({
     message: {
@@ -7,7 +7,7 @@ module.exports = new Schema({
 
     owner: {
         type: ObjectId,
-        ref: 'user'
+        ref: 'User'
     },
     
     date: {

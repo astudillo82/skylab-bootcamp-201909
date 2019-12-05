@@ -26,6 +26,7 @@ const updateUser = (id, update) =>{
         if(!user) throw new Error(`User with username ${username} does not exists`)
 
         await User.updateOne({_id:user.id},{$set:update})
+        
     })()
 
 }

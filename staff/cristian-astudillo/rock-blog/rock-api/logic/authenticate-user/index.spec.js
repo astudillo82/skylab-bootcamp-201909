@@ -4,7 +4,7 @@ const { expect } = require('chai')
 const logic = require('../index')
 const { database, models: { User } } = require('rock-data')
 
-describe('Logic - Authenticate User' , () =>{
+describe('Logic - Authenticate User', () =>{
 
     before(() => database.connect(TEST_DB_URL))
 
@@ -25,37 +25,38 @@ describe('Logic - Authenticate User' , () =>{
 
     })
 
-    it('Should to authenticate user if they are incorrect data', () => {
+    it('Should to create user if they are incorrect data', () => {
         expect(()=> logic.authenticateUser(1,password)).to.throw(Error, '1 is not a string')
         expect(()=> logic.authenticateUser(username,1)).to.throw(Error, '1 is not a string')
     })
 
-    it('Should to authenticate user on correct credentials', async () => {debugger
+
+    it('Should to create user on correct credentials', async () => {
         const userId = await logic.authenticateUser(username, password)
         expect(userId).to.equal(id)
     })    
     
 
-    it('Should to authenticate user if it is incorrect username', () => {
+    it('Should to authenticate user if it is incorrect username',async () => {
         username = "John Doe"
 
         try{
-            logic.authenticateUser(username,password)
+           await logic.authenticateUser(username,password)
         }catch(error){
-            expect(error.message).to.equal(`Username with ${username} does not exists`)
+            expect(error.message).to.equal(`User with username ${username} does not exists`)
         }
     })
+    
 
-    it('Should to authenticate user if it is incorrect password', () => {
-        username = "576rhfbe"
+    it('Should to authenticate user if it is incorrect password',async () => {
+        password = "576rhfbe"
 
         try{
-            logic.authenticateUser(username,password)
+            await logic.authenticateUser(username,password)
         }catch(error){
             expect(error.message).to.equal(`Wrong Credentials`)
         }
     })
-
 
     after(()=> User.deleteMany().then(database.disconnect))
 })

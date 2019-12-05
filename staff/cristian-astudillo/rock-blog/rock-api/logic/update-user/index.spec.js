@@ -4,19 +4,19 @@ const { expect } = require ('chai')
 const logic = require('../')
 const { database, models : { User } } = require ('rock-data')
 
-describe('Logic - Update User', () =>{
+describe('Logic - Update User', () => {
 
     before (() => database.connect(TEST_DB_URL))
 
     let name, surname, username, email, password, id
     
-    beforeEach(async () => {
-        // await user.deleteMany()
+    beforeEach(async () => {       
         
         update = {
             name:'Cristian',
             surname: 'Astudillo'
         }
+        
         name = `name-${Math.random()}`
         surname = `surname-${Math.random()}`
         username = `username-${Math.random()}`

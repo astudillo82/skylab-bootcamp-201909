@@ -6,7 +6,6 @@ const { models: { User }} = require('rock-data')
 //Se exporta el "VALIDATE" para poder validar los datos si son correctos o no
 const { validate } = require('rock-util')
 
-
 // Se usan los paŕametros "id, updates" para poder validarlos si es un string o no
 const updateUser = (id, update) => {
     validate.string(id)
@@ -16,6 +15,7 @@ const updateUser = (id, update) => {
                 
         const user = await User.findOne({_id:id})
 
+        //Si findOne() no encuentra el esquema, retornará "null"(!user) 
         if(!user) throw new Error('User with username ' + username + ' does not exist')        
  
         //update-->por ejemplo {name, surname}

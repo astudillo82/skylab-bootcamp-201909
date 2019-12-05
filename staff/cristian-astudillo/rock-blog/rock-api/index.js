@@ -8,7 +8,7 @@ const cors = require('./utils/cors') // Requiere CORS para acceder a recursos de
 const { database } = require('rock-data')// Requiere "database" desde "rock-data"
 const { users } = require('./routes') //Requiere route para encasillar una ruta( en este caso "users" y "posts")
 const api = express()//Se invoca express() ya que es nuestro servidor 
-api.use(cors) // ??.use
+api.use(cors) 
 api.options('*', cors, (req, res) => { 
     res.end()
 })
