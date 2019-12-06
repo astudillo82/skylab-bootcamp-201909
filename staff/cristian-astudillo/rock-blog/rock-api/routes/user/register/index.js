@@ -1,6 +1,8 @@
 const logic = require('../../../logic')
+const { router, jsonBodyParser} = require ('../../../routes/index')
 
-module.exports = (req, res) => {
+
+router.post('/', jsonBodyParser,(req, res) => {
     const { body: { name, surname, email, username, password } } = req
 
     try {
@@ -9,4 +11,5 @@ module.exports = (req, res) => {
     } catch ({ message }) {
         res.status(400).json({ error: message })
     }
-}
+})
+

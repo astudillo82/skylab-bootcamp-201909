@@ -8,7 +8,7 @@ describe('Logic - Modify Post', () => {
 
     before(() => database.connect(TEST_DB_URL))
 
-    let id, name, surname, username, email, password, description, owner, date
+    let id, name, surname, username, email, password, description, date
 
     beforeEach(async () => {
 
@@ -33,10 +33,12 @@ describe('Logic - Modify Post', () => {
         message = `message-${Math.random()}`
         owner = `owner-${Math.random()}`
         date = `date-${Math.random()}`
+        
 
         const comment = new Comment({ message, owner:id, date })
         
         const post = await Post.create({ title, description, owner:id, date, comments:[comment] })
+
         id = post.id
     })
 
@@ -45,7 +47,7 @@ describe('Logic - Modify Post', () => {
         expect(() => logic.modifyPost(id, 1)).to.throw(Error, '1 is not a string')
     })
 
-    it('Should to modify post if the username is incorrect', async () => {
+    it('Should to modify post if the id is incorrect', async () => {
         username = 'John Doe'
 
         try {

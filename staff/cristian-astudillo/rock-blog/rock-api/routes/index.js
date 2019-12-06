@@ -5,6 +5,7 @@ const router = Router()
 const jsonBodyParser = bodyParser.json()
 
 
+
 /**********************************************************************
  * CONNECT TO LOGIC
  *********************************************************************/
@@ -14,6 +15,10 @@ const registerUser = require('./user/register')
 const authenticateUser = require('./authenticate-user')
 const retrieveUser = require('./retrieve-user')
 
+const updateUser = require('./update-user')
+const deleteUser = require('./delete-user')
+const createPost = require('./create-post')
+const modifyPost = require('./modify-post')
 
 
 /**********************************************************************

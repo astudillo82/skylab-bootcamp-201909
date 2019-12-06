@@ -9,7 +9,7 @@ describe('Logic - Modify Post', () => {
 
     before(() => database.connect(TEST_DB_URL))
 
-    let id, name, surname, username, email, password, description, owner, date
+    let id, name, surname, username, email, password, description, date
 
     beforeEach(async () => {
 
@@ -35,8 +35,9 @@ describe('Logic - Modify Post', () => {
         owner = `owner-${Math.random()}`
         date = `date-${Math.random()}`
 
+      
         const comment = new Comment({ message, owner:id, date })
-        
+       
         const post = await Post.create({ title, description, owner:id, date, comments:[comment] })
         id = post.id
     })
@@ -51,7 +52,7 @@ describe('Logic - Modify Post', () => {
 
         try {
             await logic.modifyPost(id, description)
-        } catch(error) {
+        } catch (error) {
             expect(error.message).to.equal(`User with id ${id} does not exists`)
         }
     })

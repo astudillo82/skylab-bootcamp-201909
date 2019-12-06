@@ -21,7 +21,7 @@ const deleteUser = (id) => {
 
         const user = await User.findOne({_id:id})
 
-        if(!user) throw new Error(`User with username ${username} does not exists`)
+        if(!user) throw new Error(`User with id ${id} does not exists`)
 
         await User.deleteOne({_id:id})
     })()
