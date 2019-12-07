@@ -2,7 +2,7 @@ require('dotenv').config()
 const { env: { TEST_DB_URL } } = process
 const { expect } = require('chai')
 const logic = require('../index')
-const { database, models: { User, Post, Comment } } = require('rock-data')
+const { database, ObjectId, models: { User, Post, Comment } } = require('rock-data')
 
 describe('Logic - Modify Post', () => {
 
@@ -28,18 +28,17 @@ describe('Logic - Modify Post', () => {
         title = `title-${Math.random()}`
         description = `description-${Math.random()}`
         owner = `owner-${Math.random()}`
-        date = `date-${Math.random()}`
+        
 
         message = `message-${Math.random()}`
-        owner = `owner-${Math.random()}`
-        date = `date-${Math.random()}`
+        owner = `owner-${Math.random()}`      
         
 
-        const comment = new Comment({ message, owner:id, date })
+        const comment = new Comment({ message, owner:id, date: new Date })
         
-        const post = await Post.create({ title, description, owner:id, date, comments:[comment] })
-
+        const post = await Post.create({ title, description, owner:ObjectId(id), comments:[comment] })
         id = post.id
+        
     })
 
     it('Should to modify user if they are incorrect dates', () => {

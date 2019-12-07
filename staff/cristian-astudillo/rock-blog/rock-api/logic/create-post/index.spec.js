@@ -20,7 +20,6 @@ describe('Logic - Create Post', () => {
         await Promise.all([User.deleteMany(), Post.deleteMany()])
 
         const user = await User.create({name, surname, username, email, password})
-
         id = user.id    
 
         title = `title-${Math.random()}`

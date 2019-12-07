@@ -5,7 +5,7 @@ const deleteComment = (id) => {
     validate.string(id)
 
     return(async () => {
-        const user = await Comment.findOne({_id:id})
+        const user = await Comment.deleteOne({_id:id})
 
         if(!user) throw new Error (`User with id ${id} does not exists`)
 

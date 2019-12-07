@@ -17,19 +17,18 @@ describe('Logic - Create Comment', () => {
         username = `username-${Math.random()}`
         email = `email-${Math.random()}@email.com`
         password = `pasword-${Math.random()}`
-
+        
         await Promise.all([User.deleteMany(), Comment.deleteMany()])
 
-        const user = await User.create({name, surname, username, email, password})
-       
+        const user = await User.create({name, surname, username, email, password})        
+        id = user.id
+        
         
         message = `message-${Math.random()}`
-        owner = `owner-${Math.random()}`
-        date = `date-${Math.random()}`
+        owner = `owner-${Math.random()}`      
        
-        const comment = Comment.create({ message, owner:id, date })
-
-        id = user.id 
+        const comment = Comment.create({ message, owner:id, date:new Date })
+        id_comment = comment.id 
        
     })
 

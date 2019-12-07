@@ -9,5 +9,7 @@ module.exports = {
     deletePost : require('./delete-post'),
     createComment : require('./create-comment'),
     modifyComment : require('./modify-comment'),
-    deleteComment : require('./delete-comment')
+    deleteComment : require('./delete-comment'),
+    retrieveAllPosts : require('./retrieve-all-posts'),
+    retrievePost : require('./retrieve-post')
 }

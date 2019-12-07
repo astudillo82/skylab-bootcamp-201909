@@ -2,7 +2,7 @@ require('dotenv').config()
 const { env: { TEST_DB_URL } } = process
 const { expect } = require('chai')
 const logic = require('../index')
-const { database, models: { User, Comment } } = require('rock-data')
+const { database, ObjectId, models: { User, Comment } } = require('rock-data')
 
 
 describe('Logic - Modify Comment', () => {
@@ -20,23 +20,25 @@ describe('Logic - Modify Comment', () => {
 
         await Promise.all([User.deleteMany(), Comment.deleteMany()])
 
-        const user = await User.create({ name, surname, username, email, password })
-        
+        const user = await User.create({ name, surname, username, email, password })        
         id = user.id
 
         // title = `title-${Math.random()}`
         // description = `description-${Math.random()}`
         // owner = `owner-${Math.random()}`
-        // date = `date-${Math.random()}`
-
+      
+        
+        // const post = await Post.create({ title, description, owner:ObjectId(id), date:new Date })
+        // id_post = post.id
+        
+        
         message = `message-${Math.random()}`
         owner = `owner-${Math.random()}`
-        date = `date-${Math.random()}`        
-
-        const comment = await Comment.create({ message, owner:id, date })     
-
-        id = comment.id
-
+        
+        
+        const comment = await Comment.create({ message, owner:ObjectId(id), date:new Date })
+        id_comment = comment.id
+        
     })
 
     it('Should to modify user if they are incorrect dates', () => {
@@ -45,8 +47,8 @@ describe('Logic - Modify Comment', () => {
     })
 
     it('Should to modify comment if the id is incorrect', async () => {
-        username = 'John Doe'
-
+        const id = '5debbfba23be5a63d0f0b927'
+     
         try {
             await logic.modifyComment(id, message)
         } catch(error) {

@@ -1,14 +1,14 @@
 require('dotenv').config()
 const { env : { TEST_DB_URL } } = process
 const { expect } = require('chai')
-const logic = require('../')
-const { database, models: { User, Comment } } = require('rock-data')
+const logic = require('../delete-comment')
+const { database, ObjectId, models: { User, Post, Comment } } = require('rock-data')
 
 describe('Logic - Delete Comment', () =>{
 
     before(() => database.connect(TEST_DB_URL))
 
-    let id, name, surname, username, email, password, message, date
+    let id,id_post, id_comment, name, surname, username, email, password, message, date
 
     beforeEach(async () => {
         
@@ -23,13 +23,23 @@ describe('Logic - Delete Comment', () =>{
         const user = await User.create({ name, surname, username, email, password })
         id = user.id
 
+        title = `title-${Math.random()}`
+        description = `description-${Math.random()}`
+
+        
+
+        const post = await Post.create({title, description, owner:ObjectId(id)})
+        id_post = post.id
+
+
         message = `message-${Math.random()}`
         owner = `owner-${Math.random()}`
         date = `date-${Math.random()}`
-
-        const comment = await Comment.create({message, owner:id, date})
-
-        id = comment.id
+        
+        
+        const comment = await Comment.create({message, owner:ObjectId(id), date: new Date})
+        id_comment = comment.id
+    })
 
         it('Should to delete comment if it is incorrect date', () => {
             expect(() => logic.deleteComment(1)).to.throw(Error, '1 is not a string')
@@ -47,8 +57,7 @@ describe('Logic - Delete Comment', () =>{
         })
 
 
+        after(() => Promise.all([User.deleteMany(), Comment.deleteMany()]).then(database.disconnect))
     })
+    
 
-    after(() => Promise.all([User.deleteMany(), Comment.deleteMany()]).then(database.disconnect))
-
-})

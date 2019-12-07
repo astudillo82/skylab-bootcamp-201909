@@ -12,7 +12,7 @@ const createComment = (id, message) => {
 
         if(!user) throw new Error (`User with id ${id} not found`)
 
-        const comment = await Comment.create ({owner:id, message, date :new Date})
+        const comment = await Comment.create({owner:id, message, date:new Date})
 
         return comment.id
     })()
