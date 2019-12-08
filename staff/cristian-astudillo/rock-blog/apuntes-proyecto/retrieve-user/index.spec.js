@@ -8,8 +8,7 @@ const { database, models: { User } } = require('rock-data')//Modelo "USER"
 
 //Agrupa los "IT", se utiliza para agrupar los tests o suite de tests.
 //Permite crear nuestro mundo
- describe('Logic - Retrieve User', () => {
-   
+ describe('Logic - Retrieve User', () => {   
 
     //before() : La función dentro de before se va a ejecutar ANTES del primer test dentro del describe.
     //Conecta a la Base de Datos
@@ -48,7 +47,7 @@ const { database, models: { User } } = require('rock-data')//Modelo "USER"
         expect(user.email).to.be.a('string')
         expect(user.username).to.equal(username)
         expect(user.username).to.be.a('string')
-        expect(user.posts).to.be.an('array').that.is.empty//????EMBED??
+        expect(user.posts).to.be.an('array').that.is.empty
     })
 
 
@@ -61,7 +60,7 @@ const { database, models: { User } } = require('rock-data')//Modelo "USER"
             expect(error.message).to.equal(`User with id ${id} does not exist`)
         }
     })
-    
-    // Una vez que nos pase el test, deleteMany nos permite limpiar el usuario creado (User.create) y luego (then()) nos desconecta, sino seguirá ejecutándose o "runeando"
+    //La función dentro de after se va a ejecutar después del último test dentro del describe
+    //DeleteMany() limpia el usuario creado (User.create) y luego el then() nos desconecta de la base de datos.
     after(() => User.deleteMany().then(database.disconnect))
  })

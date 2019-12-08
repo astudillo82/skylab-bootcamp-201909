@@ -1,16 +1,22 @@
-require('dotenv').config()
-const { env: { TEST_DB_URL } } = process
-const { expect } = require('chai')
-const logic = require('../index')
-const { database, models: { User, Post, Comment } } = require('rock-data')
+// ROCK-API/LOGIC/MODIFY-POST/INDEX.SPEC.JS : REALIZA EL TESTING PARA EVITAR ERRORES UNA VEZ EJECUTADO EL PROYECTO.
 
+require('dotenv').config()//Para guardar secretos
+const { env: { TEST_DB_URL } } = process //conectar/desconectar la base de datos
+const { expect } = require('chai') //Para poder ejecutar el test
+const logic = require('../index')//Ruta del index.js
+const { database, models: { User, Post, Comment } } = require('rock-data')//Modelo "USER", "POST", "COMMENT"
 
+//Agrupa los "IT", se utiliza para agrupar los tests o suite de tests.
+//Permite crear nuestro mundo 
 describe('Logic - Modify Post', () => {
 
+     //La función dentro de before se va a ejecutar antes del primer test dentro del describe
     before(() => database.connect(TEST_DB_URL))
 
+    //Se declaran las variables
     let id, name, surname, username, email, password, description, date
 
+    //la función dentro de beforeEach se va a ejecutar antes de cada test dentro del describe
     beforeEach(async () => {
 
         description = 'Everything'
@@ -21,6 +27,7 @@ describe('Logic - Modify Post', () => {
         email = `email-${Math.random()}@email.com`
         password = `password-${Math.random()}`
 
+        //Se usa Promise.all()
         await Promise.all([User.deleteMany(), Post.deleteMany()])
 
         const user = await User.create({ name, surname, username, email, password })
@@ -42,6 +49,7 @@ describe('Logic - Modify Post', () => {
         id = post.id
     })
 
+    //it : son las casos a testear.
     it('Should to modify user if they are incorrect dates', () => {
         expect(() => logic.modifyPost(1,description)).to.throw(Error, '1 is not a string')
         expect(() => logic.modifyPost(id, 1)).to.throw(Error, '1 is not a string')
@@ -57,6 +65,8 @@ describe('Logic - Modify Post', () => {
         }
     })
 
+    //La función dentro de after se va a ejecutar después del último test dentro del describe
+    //DeleteMany() limpia el usuario creado (User.create) y post creado(Post.deleteMany) con un Promise.all(),  y luego el then() nos desconecta de la base de datos
     after(() => Promise.all([User.deleteMany(), Post.deleteMany()]).then(database.disconnect))
 
 })

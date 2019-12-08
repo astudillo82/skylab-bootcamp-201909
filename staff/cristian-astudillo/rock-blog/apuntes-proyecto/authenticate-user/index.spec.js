@@ -22,9 +22,8 @@ describe('Logic - Authenticate User', () => {
     beforeEach(async () => {
 
         // Se usa deleteMany() para limpiar las coincidencias(arriba o abajo??)
-        await User.deleteMany()
-        
-        //Math.random()???
+        await User.deleteMany()        
+       
         name = `name-${Math.random()}`
         surname = `surname-${Math.random()}`
         email = `email-${Math.random()}@email.com`
@@ -36,7 +35,7 @@ describe('Logic - Authenticate User', () => {
 
             //Luego, se guarda en una constante "user"
             //findOne(): ????
-            //lean(): método de mongoose que convierte  de mongoObject a Object
+            //lean(): método de mongoose que convierte de mongoObject a Object
             //en el findOne()puede ser cualquier variable(name, surname, etc...), pero se busca por 'email' ya que un usuario puede tener un mismo nombre, pero no un mismo email 
             const user = await User.findOne({email}).lean()
 

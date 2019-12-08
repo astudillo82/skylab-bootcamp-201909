@@ -1,13 +1,12 @@
 //REGISTER-USER/INDEX.JS : AQUÍ SE CREA LA LÓGICA DEL REGISTRO DE USUARIOS
 
-//Se exporta el modelo "user" para poder trabajar con el esquema de usuario y poder validarlos
+//Se exporta el modelo "User" para poder trabajar con el esquema de usuario y poder validarlos
 const { models: { User }} = require('rock-data')
 
-
+//Se exporta "validate" para poder validar datos primitivos del validate.js
 const { validate } = require('rock-util')
 
-
-//Se guardan las propiedades en una constante llamada "registerUser"  para loego poder validarlas desde "validate.js"
+//Se guardan las propiedades en una constante llamada "registerUser"  para luego poder validarlas desde "validate.js"
 const registerUser = (name, surname, email, username, password) => {
     validate.string(name)
     validate.string(surname)

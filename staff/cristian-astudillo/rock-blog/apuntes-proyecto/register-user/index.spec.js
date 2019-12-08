@@ -1,8 +1,8 @@
-// ROCK-API/LOGIC/REGISTER-USER/INDEX.SPEC.JS :  REALIZA EL TESTING PARA EVITAR ERRORES UNA VEZ EJECUTADO EL PROYECTO.
+// ROCK-API/LOGIC/REGISTER-USER/INDEX.SPEC.JS : REALIZA EL TESTING PARA EVITAR ERRORES UNA VEZ EJECUTADO EL PROYECTO.
 
 require('dotenv').config()//Para guardar secretos
-const { env: { TEST_DB_URL } } = process // conectar/desconectar la base de datos
-const { expect } = require('chai')//Para poder ejecutar el test
+const { env: { TEST_DB_URL } } = process //Para guardar secretos
+const { expect } = require('chai') //Para poder ejecutar el test
 const logic = require('../')//Ruta del index.js
 const { database, models: { User } } = require('rock-data')//Modelo "USER"
 
@@ -31,6 +31,7 @@ describe('Logic - Register User', () => {
         const noResponse = await logic.registerUser(name, surname, email, username, password)        
         expect(noResponse).to.be.undefined
 
+        
         const user = await User.findOne({ email, username }).lean()
 
         expect(user).to.exist

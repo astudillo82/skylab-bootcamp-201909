@@ -67,6 +67,8 @@ let id, update, name, surname, email, username, password
         }
     })
 
+    //La función dentro de after se va a ejecutar después del último test dentro del describe
+    //DeleteMany() limpia el usuario creado (User.create) y luego el then() nos desconecta de la base de datos.
     after(() => User.deleteMany().then(database.disconnect))
 
 })

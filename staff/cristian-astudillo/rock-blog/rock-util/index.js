@@ -7,5 +7,9 @@
  */
 
 module.exports = { 
-    validate: require('./logic/validate')
+    validate: require('./logic/validate'),
+    errors: require('./errors'),
+    validators: require('./validators'),
+    polyfills: require('./polyfills')
 }
+

@@ -1,8 +1,14 @@
 const logic = require('../../../logic')
-const { router, jsonBodyParser} = require ('../../../routes/index')
+const bodyParser = require('body-parser')
+// const { jsonBodyParser } = require ('../../../routes/index')
+const { Router } = require('express')
+const jsonBodyParser = bodyParser.json()
 
+
+const router = Router()
 
 router.post('/', jsonBodyParser,(req, res) => {
+    debugger
     const { body: { name, surname, email, username, password } } = req
 
     try {
@@ -13,3 +19,4 @@ router.post('/', jsonBodyParser,(req, res) => {
     }
 })
 
+module.exports = router

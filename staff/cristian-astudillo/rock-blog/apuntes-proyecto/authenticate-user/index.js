@@ -3,7 +3,7 @@
 //Se exporta el modelo "User" para poder trabajar con el esquema de usuario y poder validarlos
 const { models: { User }} = require('rock-data')
 
-//Se exporta el "VALIDATE" para poder validar los datos si son correctos o no
+//Se exporta "validate" para poder validar datos primitivos del validate.js
 const { validate } = require('rock-util')
 
  // Se usan los paŕametros del modelo "User" para poder validarlos si son strings o no
@@ -12,7 +12,6 @@ const authenticateUser = (username, password) => {
     validate.string(password)
 
     // Una vez que son validados "username" y "password", accedemos a la base de datos para buscar el "username"  
-
     return (async () => {   
         //Se usa findOne() para obtener el "username" desde el esquema 'user.js" y guardarlo desde una constante
         const user = await User.findOne({username})
