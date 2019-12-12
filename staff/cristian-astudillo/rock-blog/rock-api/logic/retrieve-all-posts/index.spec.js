@@ -4,7 +4,6 @@ const { expect } = require('chai')
 const  logic  = require('..')
 const { database, ObjectId, models: { User, Post} } = require('rock-data')
 
-
 describe('Logic - Retrieve All Posts', () =>{
     before (() => database.connect(TEST_DB_URL))
 

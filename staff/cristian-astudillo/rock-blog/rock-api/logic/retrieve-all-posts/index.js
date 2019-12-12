@@ -1,7 +1,13 @@
 const { models : { User, Post } } = require('rock-data')
 const { validate } = require('rock-util')
 
-
+/**
+ * 
+ * @param {String} id 
+ * 
+ * @throws {Error} to validate id string
+ * @throws {Error} To check correct user and post data
+ */
 const retrieveAllPosts = (id) => {
     validate.string(id)
 

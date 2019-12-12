@@ -1,7 +1,16 @@
 const { models: { User, Post } } = require('rock-data')
 const { validate } = require('rock-util')
 
-
+/**
+ * 
+ * @param {String} id 
+ * @param {String} description 
+ * 
+ * @throws {Error} to validate id string
+ * @throws {Error} To validate description string
+ * @throws {Error} To check id is not correct
+ * 
+ */
 const modifyPost = (id, description) => {
     validate.string(id)    
     validate.string(description)    

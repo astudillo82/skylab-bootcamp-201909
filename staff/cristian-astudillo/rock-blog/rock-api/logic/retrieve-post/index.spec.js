@@ -2,11 +2,11 @@ require('dotenv').config()
 const { env: { TEST_DB_URL } } = process
 const { expect } = require('chai')
 const  logic  = require('..')
-const { polyfills: { arrayRandom } } = require('rock-util')
+const { random } = require('rock-util')
 
 const { database, ObjectId, models: { User, Post} } = require('rock-data')
-
-arrayRandom()
+debugger
+random()
 
 describe('Logic - Retrieve Post', () => {
     before (() => database.connect(TEST_DB_URL))
@@ -57,7 +57,7 @@ describe('Logic - Retrieve Post', () => {
     })
 
     it('should to get correct user and post data', async() => {debugger
-        debugger
+       
         const postId = post_ids.random()
 
         const response = await logic.retrievePost(id, postId)
@@ -69,7 +69,8 @@ describe('Logic - Retrieve Post', () => {
         
     })
 
-    it('Should to fail or unexisting user and correct post data', async () => {debugger
+    it('Should to fail or unexisting user and correct post data', async () => {
+       
         const id = ObjectId().toString()
         const postId = post_ids.random()
 
@@ -96,7 +97,7 @@ describe('Logic - Retrieve Post', () => {
 
     })
  
-    it('Should to fail on correct user and wrong post data', async () => {debugger
+    it('Should to fail on correct user and wrong post data', async () => {
         const postId = ObjectId().toString()
         
         try {

@@ -4,7 +4,7 @@ const { expect } = require('chai')
 const logic = require('../index')
 const { database, models: { User } } = require('rock-data')
 
-describe('Logic - Authenticate User', () =>{
+describe('Logic - Authenticate User', () => {
 
     before(() => database.connect(TEST_DB_URL))
 

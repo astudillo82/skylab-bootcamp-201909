@@ -1,11 +1,5 @@
-// ./VALIDATE/INDEX.SPEC.JS: REALIZA EL TESTING PARA EVITAR ERRORES UNA VEZ EJECUTADO EL PROYECTO.
-
-// Está requiriendo "chai" testing para poder realizar los testings necesarios.
 const { expect } = require("chai") 
-
-// Está requiriendo "validate" para poder realizar el testing de manera adecuada.
 const validate = require('./index')
-
 
 describe('Validate - To validate the correct dates...', () => {
 

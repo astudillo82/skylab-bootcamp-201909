@@ -16,6 +16,7 @@ const { validate } = require('rock-util')
  *      logic.updateUser(1, update)
  * 
  */
+
 const updateUser = (id, update) =>{
     validate.string(id)
     validate.object(update)

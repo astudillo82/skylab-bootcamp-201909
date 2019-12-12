@@ -12,7 +12,7 @@ This is a blog called Rock-Blog.  This blog talks about current music related to
 
 ## Use case
 
-<img src = "/home/cristian/Cristian/bootcamp/collab/skylab-bootcamp-201909/staff/cristian-astudillo/rock-document/images/use case.png">
+<img src ="/home/cristian/Cristian/bootcamp/collab/skylab-bootcamp-201909/staff/cristian-astudillo/rock-document/images/use case.png">
 
 ## Diagram Flow
 

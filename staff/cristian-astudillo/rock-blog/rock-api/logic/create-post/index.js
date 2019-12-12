@@ -1,5 +1,6 @@
 const { models: { User, Post } } = require('rock-data')
 const { validate } = require('rock-util')
+
 /**
  * Create Posts
  * 

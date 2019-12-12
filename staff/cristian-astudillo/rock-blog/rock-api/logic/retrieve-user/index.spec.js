@@ -41,12 +41,12 @@ describe('Logic - Retrieve User', () => {
         expect(user.posts).to.be.an('array').that.is.empty
     })
 
-    it('Should to retrieve user if it is incorrect ID', async () =>{
+    it('Should to retrieve user if it is incorrect ID', async () => {
         const id = '5de4e692f53ec15feb3774b5'
 
         try {
             user = await logic.retrieveUser(id)
-        }catch(error){
+        } catch(error) {
             expect(error.message).to.equal(`User with ${id} does not exists`)
         }
     })

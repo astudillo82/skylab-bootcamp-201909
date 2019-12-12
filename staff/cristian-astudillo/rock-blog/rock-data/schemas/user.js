@@ -1,12 +1,5 @@
-// SCHEMAS/USER.JS: CONSTRUCCIÓN DEL ESQUEMA DE USUARIO DE NUESTRO BLOG
-
-// Está requiriendo la librería "Mongoose", con el constructor "Schema"
 const { Schema, ObjectId } = require('mongoose')
 
-// ObjectId = Schema.ObjectId;
-// const ObjectId = Schema.Types.ObjectId
-
-//NOS BASAMOS EN EL "MODEL DATA" PARA PODER CONSTRUR UN ESQUEMA DE USUARIO PARA NUESTRO PROYECTO(NAME, SURNAME, USERNAME, EMAIL, PASSWORD)
 module.exports = new Schema({ 
         name: {
             type: String,

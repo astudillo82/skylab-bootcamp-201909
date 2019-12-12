@@ -31,6 +31,10 @@ const registerUser = (name, surname, username, email, password) => {
     validate.string(password)
 
     return (async () =>  {
+        const user = await User.findOne({ username, email })
+
+        if(user) throw new Error('This user already exists')
+
         await User.create({name, surname, username, email, password})
  })()
 }
